@@ -1,0 +1,33 @@
+{
+  "name": "y",
+  "version": "0.0.0",
+  "description": "Palringo JS Engine",
+  "main": "index.js",
+  "scripts": {
+    "build-full": "NODE_ENV=development node_modules/.bin/webpack --config=webpack/webpack.config.js",
+    "build-min": "NODE_ENV=production node_modules/.bin/webpack --config=webpack/webpack.min.config.js",
+    "build": "npm run build-full | npm run build-min",
+    "watch": "NODE_ENV=development node_modules/.bin/webpack --config=webpack/webpack.config.js --watch",
+    "serve": "node server/express.server.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "express": "*",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "typings": "^2.1.1",
+    "webpack": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Native/PalEngine.git"
+  },
+  "author": "Ariel Saldana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Native/PalEngine/issues"
+  },
+  "homepage": "https://github.com/Native/PalEngine#readme"
+}
