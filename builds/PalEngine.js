@@ -3357,24 +3357,25 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     "use strict";
 
     Object.defineProperty(exports, "__esModule", { value: true });
-    const io = require("socket.io-client");
-    class Connection {
-        constructor() {
+    var io = require("socket.io-client");
+    var Connection = /** @class */function () {
+        function Connection() {
             var token = this.randomString(15);
             this.sock = io('https://v3.palringo.com:3051/' + '?token=' + token + '&device=bot', { transports: ['websocket'] });
             return this;
         }
-        randomString(length) {
+        Connection.prototype.randomString = function (length) {
             var text = "";
             var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             for (var i = 0; i < length; i++) {
                 text += possible.charAt(Math.floor(Math.random() * possible.length));
             }
             return text;
-        }
-    }
+        };
+        return Connection;
+    }();
     exports.Connection = Connection;
-    let connection = new Connection().sock;
+    var connection = new Connection().sock;
     connection.on('connect', function () {
         console.log('connected');
     });
