@@ -29,5 +29,11 @@
   "bugs": {
     "url": "https://github.com/Native/PalEngine/issues"
   },
-  "homepage": "https://github.com/Native/PalEngine#readme"
+  "homepage": "https://github.com/Native/PalEngine#readme",
+  "dependencies": {
+    "@types/socket.io": "^1.4.31",
+    "@types/socket.io-client": "^1.4.32",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4"
+  }
 }

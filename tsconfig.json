@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "outDir": "./build/",
+      "sourceMap": false,
+      "allowJs": true,
+      "jsx": "react",
+      "target": "es5",
+      "module": "umd",
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "noImplicitAny": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "removeComments": false,
+      "preserveConstEnums": true,
+      "skipLibCheck": true,
+    },
+    "include": [
+      "./src/**/*"
+    ]
+  }

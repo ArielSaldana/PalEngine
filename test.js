@@ -1,14 +1,14 @@
-import * as io from "socket.io-client";
 
-export class Connection {
-    public sock: any;
+let io = require('socket.io-client');
+
+class Connection {
     constructor() {
         var token = this.randomString(15);
-        this.sock = io('https://v3.palringo.com:3051/' + '?token=' + token + '&device=bot', { transports: ['websocket'] });
-        return this;
+        const sock = io('https://v3.palringo.com:3051/' + '?token=' + token + '&device=bot', { transports: ['websocket'] });
+        return sock;
     }
 
-    randomString(length: number) {
+    randomString(length) {
         var text = "";
         var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         for (var i = 0; i < length; i++) {
@@ -18,7 +18,8 @@ export class Connection {
     }
 }
 
-let connection = new Connection().sock;
-connection.on('connect', function() {
+var sock = new Connection();
+
+sock.on('connect', function() {
     console.log('connected');
 });
